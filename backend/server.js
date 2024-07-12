@@ -11,15 +11,14 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 // Middleware
-app.use(bodyParser.json());
-const corsOptions = {
-  origin: "http://127.0.0.1:5500", // Specify your frontend origin
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "*", // Allow all origins, change this to specific domain in production
+    methods: ["GET", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 // Handle OPTIONS requests for specific routes
 app.options("/user/reset-password", cors(corsOptions));
