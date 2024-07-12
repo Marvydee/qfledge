@@ -19,10 +19,6 @@ app.use(
     credentials: true,
   })
 );
-
-// Handle OPTIONS requests for specific routes
-app.options("/user/reset-password", cors(corsOptions));
-
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
