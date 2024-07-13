@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/user/profile", {
+    const response = await fetch("https://qfledge.vercel.app/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
