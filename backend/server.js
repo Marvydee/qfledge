@@ -27,6 +27,7 @@ app.use(
   })
 );
 app.use(express.static("public"));
+app.use(express.json());
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;
