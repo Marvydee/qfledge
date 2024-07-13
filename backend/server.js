@@ -13,7 +13,7 @@ dotenv.config();
 // Middleware
 app.use(
   cors({
-    origin: "*", 
+    origin: "https://qfsdappsledger.com", 
     methods: ["GET", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
