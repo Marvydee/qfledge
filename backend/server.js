@@ -21,15 +21,6 @@ app.use(
 );
 app.use(express.static("public"));
 
-app.use((req, res, next) => {
-  console.log(`Incoming request: ${req.method} ${req.path}`);
-  res.on("finish", () => {
-    console.log(`Response status: ${res.statusCode}`);
-    console.log("Response headers:", res.getHeaders());
-  });
-  next();
-});
-
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;
 mongoose.connect(mongoURI, {});
