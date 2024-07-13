@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("https://qfledge.vercel.app/profile", {
+    const response = await fetch("https://qfledge-1.onrender.com/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("http://localhost:3000/user/profile", {
+      const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
