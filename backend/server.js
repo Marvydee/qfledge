@@ -11,14 +11,7 @@ const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
 // Middleware
-app.use(
-  cors({
-    origin: "https://qfsdappsledger.com", 
-    methods: ["GET", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.static("public"));
 
 // MongoDB Connection
