@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // Fetch user coin amounts
-    const userResponse = await fetch("https://qfledge.vercel.app/user/coins", {
+    const userResponse = await fetch("https://qfledge-1.onrender.com/user/coins", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
