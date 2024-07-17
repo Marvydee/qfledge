@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("https://qfledge-1.onrender.com/profile", {
+    const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
