@@ -1,22 +1,42 @@
-document.getElementById("login-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
+// admin-login.js
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+document.addEventListener("DOMContentLoaded", async () => {
+  const form = document.getElementById("admin-login-form");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-  const response = await fetch("https://qfledge-1.onrender.com/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    try {
+      const response = await fetch(
+        "https://qfledge-1.onrender.com/admin/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to login as admin");
+      }
+
+      const { token } = await response.json();
+      localStorage.setItem("token", token);
+
+      // Check if user is admin and redirect accordingly
+      const isAdmin = true; // Replace with actual check (e.g., from JWT payload)
+      if (isAdmin) {
+        window.location.href = "/frontend/public/edit-user.html";
+      } else {
+        window.location.href = "/frontend/public/dashboard.html";
+      }
+    } catch (error) {
+      console.error("Error logging in as admin:", error);
+      alert("Failed to login as admin");
+    }
   });
-
-  if (response.ok) {
-    const data = await response.json();
-    // alert("Login successful");
-    // Save the token and redirect to dashboard
-    localStorage.setItem("token", data.token);
-    window.location.href = "user-dashboard.html";
-  } else {
-    alert("Failed to login");
-  }
 });
