@@ -28,6 +28,7 @@ app.use(
 );
 app.use(express.static("public"));
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;
@@ -97,12 +98,14 @@ app.get("/user/check-admin", isAuthorized, (req, res) => {
   }
 });
 
-// Set up multer for file uploads
+// Set up Multer storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../frontend/public/uploads");
+    // Specify the uploads directory
+    cb(null, path.join(__dirname, 'uploads'));
   },
   filename: (req, file, cb) => {
+    // Use a timestamp and original file name for the filename
     cb(null, `${Date.now()}-${file.originalname}`);
   },
 });
