@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching profile data:", error);
   }
-});
 
 
   // Handle form submission for profile update
