@@ -61,6 +61,7 @@ const userSchema = new mongoose.Schema({
   },
   profilePicture: { type: String, default: "default.jpg" },
   isAdmin: { type: Boolean, default: false }, // New field for admin role
+   balance: { type: Number, default: 0 }, // New balance property
 });
 
 const User = mongoose.model("User", userSchema);
@@ -133,6 +134,7 @@ app.post("/register", async (req, res) => {
         TRON: 0,
         XRP: 0,
       }, // Initialize with default coin amounts
+      balance: 0, // Initialize balance
     });
     await newUser.save();
     console.log("New User:", newUser); // Log the newly created user
@@ -190,6 +192,7 @@ app.get("/user/profile", isAuthorized, async (req, res) => {
       username: user.username,
       email: user.email,
       profilePicture: user.profilePicture,
+      balance: user.balance, // Include balance in response
     });
   } catch (error) {
     console.error("Error fetching profile:", error);
@@ -244,7 +247,7 @@ app.post("/user/reset-password", async (req, res) => {
 // Admin Route to Edit User Details
 app.put("/admin/user/:id", isAuthorized, isAdmin, async (req, res) => {
   const { id } = req.params;
-  const { username, email, coins } = req.body;
+  const { username, email, coins, balance } = req.body;
   try {
     const user = await User.findById(id);
     if (!user) {
@@ -253,6 +256,7 @@ app.put("/admin/user/:id", isAuthorized, isAdmin, async (req, res) => {
     user.username = username || user.username;
     user.email = email || user.email;
     user.coins = coins || user.coins;
+    user.balance = balance !== undefined ? parseFloat(balance) : user.balance; // Update balance
     await user.save();
     res.send("User details updated");
   } catch (error) {
@@ -316,6 +320,7 @@ app.post("/admin/register", async (req, res) => {
         TRON: 0,
         XRP: 0,
       }, // Initialize with default coin amounts
+      balance: 0, // Initialize balance
     });
     await newAdmin.save();
     console.log("New Admin User:", newAdmin); // Log the newly created admin user
