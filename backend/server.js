@@ -100,7 +100,7 @@ app.get("/user/check-admin", isAuthorized, (req, res) => {
 // Set up multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../frontend/public/uploads");
+    cb(null, "/public/uploads");
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-${file.originalname}`);
