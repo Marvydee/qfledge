@@ -20,37 +20,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("Profile Data:", profileData);
 
     // Update the DOM with the profile information
-    document.getElementById("display-username").textContent =
-      profileData.username;
+    document.getElementById("display-username").textContent = profileData.username;
     document.getElementById("display-email").textContent = profileData.email;
-    const displayProfilePictureElement = document.getElementById(
-      "display-profile-picture"
-    );
+
+    const profilePictureUrl = profileData.profilePicture
+      ? `https://qfledge-1.onrender.com/uploads/${profileData.profilePicture}`
+      : "/public/default.jpg";
+
+    const displayProfilePictureElement = document.getElementById("display-profile-picture");
     if (displayProfilePictureElement) {
-      displayProfilePictureElement.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
-      console.log('profile uploaded');
+      displayProfilePictureElement.src = profilePictureUrl;
     }
 
     const displayProfilePicture = document.getElementById("profile-picture");
     if (displayProfilePicture) {
-      displayProfilePicture.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
-       console.log('profile uploaded');
+      displayProfilePicture.src = profilePictureUrl;
     }
 
-    const displayProfilePictureElements =
-      document.querySelectorAll(".profile-picture");
+    const displayProfilePictureElements = document.querySelectorAll(".profile-picture");
     displayProfilePictureElements.forEach((element) => {
-      element.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      element.src = profilePictureUrl;
     });
 
     const display = document.getElementById("display");
     if (display) {
-      display.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
-       console.log('profile uploaded');
+      display.src = profilePictureUrl;
     }
 
     // Prefill the form with current user details
@@ -59,6 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching profile data:", error);
   }
+});
+
 
   // Handle form submission for profile update
   const form = document.getElementById("edit-profile-form");
