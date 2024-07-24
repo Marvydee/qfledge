@@ -107,6 +107,8 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     // Use a timestamp and original file name for the filename
     cb(null, `${Date.now()}-${file.originalname}`);
+    cb(null, filename);
+    console.log(`File saved as: ${filename}`); // Log filename
   },
 });
 
