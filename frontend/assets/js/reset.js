@@ -6,7 +6,7 @@ document
     const email = document.getElementById("email").value;
     const newPassword = document.getElementById("newPassword").value;
 
-    fetch("http://127.0.0.1:3000/user/reset-password", {
+    fetch("https://qfledge-1.onrender.com/user/reset-password", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,10 +22,24 @@ document
       })
       .then((data) => {
         console.log("Password reset successfully:", data);
-        alert("Password reset successfully");
+
+        // Display success message
+        document.getElementById("message").textContent =
+          "Password reset successfully";
+        document.getElementById("message").style.color = "green";
+
+        if (data.userType === "admin") {
+          window.location.href = "admin-login.html";
+        } else {
+          window.location.href = "load-login.html";
+        }
       })
       .catch((error) => {
         console.error("Error resetting password:", error);
-        alert("Failed to reset password");
+
+        // Display error message
+        document.getElementById("message").textContent =
+          "Failed to reset password: " + error.message;
+        document.getElementById("message").style.color = "red";
       });
   });
