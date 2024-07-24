@@ -9,11 +9,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // Fetch user coin amounts
-    const userResponse = await fetch("https://qfledge-1.onrender.com/user/coins", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const userResponse = await fetch(
+      "https://qfledge-1.onrender.com/user/coins",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     if (!userResponse.ok) {
       throw new Error("Failed to fetch user coin amounts");
