@@ -29,12 +29,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (displayProfilePictureElement) {
       displayProfilePictureElement.src =
         `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      console.log('profile uploaded');
     }
 
     const displayProfilePicture = document.getElementById("profile-picture");
     if (displayProfilePicture) {
       displayProfilePicture.src =
         `uploads/${profileData.profilePicture}` || "public/default.jpg";
+       console.log('profile uploaded');
     }
 
     const displayProfilePictureElements =
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (display) {
       display.src =
         `uploads/${profileData.profilePicture}` || "public/default.jpg";
+       console.log('profile uploaded');
     }
 
     // Prefill the form with current user details
