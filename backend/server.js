@@ -60,8 +60,8 @@ const userSchema = new mongoose.Schema({
     XRP: { type: Number, default: 0 },
   },
   profilePicture: { type: String, default: "default.jpg" },
-  isAdmin: { type: Boolean, default: false }, // New field for admin role
-   balance: { type: Number, default: 0 }, // New balance property
+  isAdmin: { type: Boolean, default: false },
+  balance: { type: Number, default: 0 }, // New balance property
 });
 
 const User = mongoose.model("User", userSchema);
@@ -99,17 +99,13 @@ app.get("/user/check-admin", isAuthorized, (req, res) => {
   }
 });
 
-// Set up Multer storage configuration
+// Set up multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    // Specify the uploads directory
-    cb(null, path.join(__dirname, 'uploads'));
+    cb(null, "../frontend/public/uploads");
   },
   filename: (req, file, cb) => {
-    // Use a timestamp and original file name for the filename
     cb(null, `${Date.now()}-${file.originalname}`);
-    cb(null, filename);
-    console.log(`File saved as: ${filename}`); // Log filename
   },
 });
 
