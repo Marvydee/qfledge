@@ -317,8 +317,29 @@
 
 </div>
 <script>
+let sessionTimeout;
+const TIMEOUT_DURATION = 10 * 60 * 1000; // 10 minutes
 
+// Reset the timer on user activity
+function resetTimer() {
+    clearTimeout(sessionTimeout);
+    sessionTimeout = setTimeout(logout, TIMEOUT_DURATION);
+}
 
+// Log the user out by redirecting to the login page
+function logout() {
+    alert("Session expired due to inactivity. Redirecting to login page.");
+    window.location.href = 'load-login.html'; // Replace with your login page URL
+}
+
+// Event listeners for user activity
+window.addEventListener('mousemove', resetTimer);
+window.addEventListener('keydown', resetTimer);
+window.addEventListener('scroll', resetTimer);
+window.addEventListener('click', resetTimer);
+
+// Start the timer initially
+resetTimer();
 </script>
 
 <script src="../assets/js/jquery.min.js"></script>
