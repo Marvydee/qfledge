@@ -60,7 +60,7 @@ const userSchema = new mongoose.Schema({
     XRP: { type: Number, default: 0 },
   },
   profilePicture: { type: String, default: "default.jpg" },
-  isAdmin: { type: Boolean, default: false },
+  isAdmin: { type: Boolean, default: false }, // New field for admin role
   balance: { type: Number, default: 0 }, // New balance property
 });
 
@@ -316,7 +316,7 @@ app.post("/admin/register", async (req, res) => {
         TRON: 0,
         XRP: 0,
       }, // Initialize with default coin amounts
-      balance: 0, // Initialize balance
+       balance: 0, // Initialize balance
     });
     await newAdmin.save();
     console.log("New Admin User:", newAdmin); // Log the newly created admin user
