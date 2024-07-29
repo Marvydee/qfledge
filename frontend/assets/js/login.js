@@ -4,11 +4,15 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const response = await fetch("https://qfledge.vercel.app/login", {
+  console.log(email, password);
+
+  const response = await fetch("https://qfledge-1.onrender.com/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
   });
+
+  console.log(response);
 
   if (response.ok) {
     const data = await response.json();

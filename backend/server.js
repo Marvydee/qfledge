@@ -28,6 +28,7 @@ app.use(
 );
 app.use(express.static("public"));
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;

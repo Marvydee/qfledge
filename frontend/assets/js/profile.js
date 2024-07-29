@@ -6,11 +6,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("https://qfledge.vercel.app/profile", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      "https://qfledge-1.onrender.com/user/profile",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch profile information");
@@ -19,10 +22,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const profileData = await response.json();
     console.log("Profile Data:", profileData);
 
+    // Save balance in a variable
+    const userBalance = profileData.balance;
+    console.log("User Balance:", userBalance);
+
     // Update the DOM with the profile information
     document.getElementById("display-username").textContent =
       profileData.username;
     document.getElementById("display-email").textContent = profileData.email;
+
     const displayProfilePictureElement = document.getElementById(
       "display-profile-picture"
     );
@@ -51,8 +59,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Prefill the form with current user details
-    document.getElementById("username").value = profileData.username;
-    document.getElementById("email").value = profileData.email;
+    // document.getElementById("username").value = profileData.username;
+    // document.getElementById("email").value = profileData.email;
+
+    // Use the user balance in your HTML page
+    const balanceElement = document.querySelector(".nftmax-amount__digit span");
+    if (balanceElement) {
+      console.log("Updating balance element:", balanceElement); // Debug log
+      balanceElement.textContent = "$" + userBalance;
+    } else {
+      console.log("Balance element not found");
+    }
   } catch (error) {
     console.error("Error fetching profile data:", error);
   }
@@ -65,13 +82,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("http://localhost:3000/user/profile", {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        "https://qfledge-1.onrender.com/user/profile",
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to update profile information");

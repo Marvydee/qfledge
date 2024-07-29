@@ -159,11 +159,11 @@
 </div>
 <div class="nftmax__item-form--group">
 <label class="nftmax__item-label" for="username">User Name</label>
-<input class="nftmax__item-input" type="text" id="username" name="username">
+<input class="nftmax__item-input" type="text" id="display-username" name="username">
 </div>
 <div class="nftmax__item-form--group">
 <label class="nftmax__item-label" for="email">Email </label>
-<input class="nftmax__item-input" type="email" id="email" name="email"  >
+<input class="nftmax__item-input" type="email" id="display-email" name="email"  >
 </div>
 </div>
 <div class="nftmax-ptabs__form-update">
@@ -227,7 +227,7 @@
 	  }
 	
 	  try {
-		const response = await fetch("http://localhost:3000/user/profile", {
+		const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
 		  headers: {
 			Authorization: `Bearer ${token}`,
 		  },
@@ -267,7 +267,7 @@
 		const formData = new FormData(form);
 	
 		try {
-		  const response = await fetch("http://localhost:3000/user/profile", {
+		  const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
 			method: "PUT",
 			headers: {
 			  Authorization: `Bearer ${token}`,
@@ -299,8 +299,6 @@
 	  });
 	});
 	</script>
-	
-<script src="../assets/js/profile.js"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery-migrate.js"></script>
 <script src="../assets/js/popper.min.js"></script>

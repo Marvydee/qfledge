@@ -7,11 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const checkAdminStatus = async () => {
     try {
-      const response = await fetch("http://localhost:3000/user/check-admin", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://qfledge-1.onrender.com/user/check-admin",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("User is not authorized as admin");
