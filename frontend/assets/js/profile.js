@@ -6,14 +6,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch(
-      "https://qfledge-1.onrender.com/user/profile",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
     if (!response.ok) {
       throw new Error("Failed to fetch profile information");
@@ -22,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const profileData = await response.json();
     console.log("Profile Data:", profileData);
 
-    // Save balance in a variable
     const userBalance = profileData.balance;
     console.log("User Balance:", userBalance);
 
@@ -31,42 +27,36 @@ document.addEventListener("DOMContentLoaded", async () => {
       profileData.username;
     document.getElementById("display-email").textContent = profileData.email;
 
+    const profilePictureUrl =
+      profileData.profilePicture || "public/default.jpg";
+
     const displayProfilePictureElement = document.getElementById(
       "display-profile-picture"
     );
     if (displayProfilePictureElement) {
-      displayProfilePictureElement.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      displayProfilePictureElement.src = profilePictureUrl;
     }
 
     const displayProfilePicture = document.getElementById("profile-picture");
     if (displayProfilePicture) {
-      displayProfilePicture.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      displayProfilePicture.src = profilePictureUrl;
     }
 
     const displayProfilePictureElements =
       document.querySelectorAll(".profile-picture");
     displayProfilePictureElements.forEach((element) => {
-      element.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      element.src = profilePictureUrl;
     });
 
     const display = document.getElementById("display");
     if (display) {
-      display.src =
-        `uploads/${profileData.profilePicture}` || "public/default.jpg";
+      display.src = profilePictureUrl;
     }
 
-    // Prefill the form with current user details
-    // document.getElementById("username").value = profileData.username;
-    // document.getElementById("email").value = profileData.email;
-
-    // Use the user balance in your HTML page
     const balanceElement = document.querySelector(".nftmax-amount__digit span");
     if (balanceElement) {
       console.log("Updating balance element:", balanceElement); // Debug log
-      balanceElement.textContent = "$ " + userBalance;
+      balanceElement.textContent = "$" + userBalance;
     } else {
       console.log("Balance element not found");
     }
@@ -82,16 +72,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(
-        "https://qfledge-1.onrender.com/user/profile",
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-        }
-      );
+      const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
 
       if (!response.ok) {
         throw new Error("Failed to update profile information");
