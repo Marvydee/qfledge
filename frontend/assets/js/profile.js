@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const balanceElement = document.querySelector(".nftmax-amount__digit span");
     if (balanceElement) {
       console.log("Updating balance element:", balanceElement); // Debug log
-      balanceElement.textContent = "$" + userBalance;
+      balanceElement.textContent = "$ " + userBalance;
     } else {
       console.log("Balance element not found");
     }
