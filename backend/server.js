@@ -108,12 +108,12 @@ app.get("/user/check-admin", isAuthorized, (req, res) => {
   }
 });
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, 'public/uploads'));
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "profile_pictures",
+    format: async (req, file) => "jpg", // supports promises as well
+    public_id: (req, file) => `${req.user.userId}-${Date.now()}`,
   },
 });
 
