@@ -7,6 +7,8 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 const dotenv = require("dotenv");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 const app = express();
 dotenv.config();
@@ -28,7 +30,7 @@ app.use(
 );
 app.use(express.static("public"));
 app.use(express.json());
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;
@@ -42,6 +44,13 @@ db.on("error", (err) => {
 
 db.once("open", () => {
   console.log("MongoDB connected successfully");
+});
+
+//cloudinary configuration
+cloudinary.config({
+  cloud_name: "drqsdmv51",
+  api_key: "491961334584242",
+  api_secret: "etsfE2U6P-YH1RurEFX_mV0RkQw", // Click 'View Credentials' below to copy your API secret
 });
 
 // User Schema and Model
@@ -99,13 +108,12 @@ app.get("/user/check-admin", isAuthorized, (req, res) => {
   }
 });
 
-// Set up multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../frontend/public/uploads");
+    cb(null, path.join(__dirname, 'public/uploads'));
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
+    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
   },
 });
 
@@ -203,7 +211,7 @@ app.put(
   upload.single("profilePicture"),
   async (req, res) => {
     const { username, email } = req.body;
-    const profilePicture = req.file ? req.file.filename : undefined;
+    const profilePicture = req.file ? req.file.path : undefined;
 
     try {
       const userId = req.user.userId;
@@ -213,7 +221,9 @@ app.put(
       }
       user.username = username || user.username;
       user.email = email || user.email;
-      user.profilePicture = profilePicture || user.profilePicture;
+      if (profilePicture) {
+        user.profilePicture = profilePicture;
+      }
       await user.save();
       res.send("Profile updated");
     } catch (error) {
