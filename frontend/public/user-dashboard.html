@@ -18,13 +18,7 @@
 <link rel="stylesheet" href="../assets/css/reset.css">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-	 #coin-prices {
-        padding: 20px;
-        background-color: #2B3139;
-        border: 1px solid #ddd;
-        /* margin: 20px; */
-        border-radius: 8px;
-      }
+
       #coin-prices div {
         margin: 10px 0;
       }
@@ -54,6 +48,44 @@
 .coin-table img {
   margin-right: 8px;
 }
+
+    .coin-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .coin-table th, .coin-table td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .coin-table th {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .coin-table tr {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 2px; /* Margin for spacing between rows */
+    }
+
+    .coin-table tr:last-child {
+      border-bottom: none; /* Remove bottom border for the last row */
+    }
+
+    .coin-table img {
+      width: 30px; /* Adjust image width as needed */
+      margin-right: 10px;
+    }
+
+	.card-body.x-d {
+    background: #e7e6f5;
+    margin-bottom: 2px;
+}
+
+    .ap-read {
+      font-size: 0.9em;
+      margin: 0;
+    }
 
 </style>
 <script src="//code.jivosite.com/widget/9PzxmWRDng" async></script>
@@ -240,7 +272,7 @@
 <a href="tokens.html" class="nftmax-btn nftmax-btn__secondary radius">Send</a>
 </div>
 <div class="dashboard-banner__single-btn dashboard-banner__main-btn">
-	<a href="https://exchange.mercuryo.io/" class="nftmax-btn nftmax-btn__secondary radius">Buy</a>
+	<a href="https://www.kraken.com/learn/buy-ethereum-eth" class="nftmax-btn nftmax-btn__secondary radius">Buy</a>
 	</div>
 </div>
 
@@ -260,8 +292,8 @@
 <table id="coin-table" style="width:100%; color: #fff; font-size: 16px;">
 			<thead>
 			  <tr>
-				<th>Token</th>
-				<th>Symbol</th>
+				<th></th>
+				<th></th>
 			  </tr>
 			</thead>
 			<tbody>
@@ -291,28 +323,8 @@
 
 </div>
 <script>
-let sessionTimeout;
-const TIMEOUT_DURATION = 10 * 60 * 1000; // 10 minutes
 
-// Reset the timer on user activity
-function resetTimer() {
-    clearTimeout(sessionTimeout);
-    sessionTimeout = setTimeout(logout, TIMEOUT_DURATION);
-}
 
-// Log the user out by redirecting to the login page
-function logout() {
-    window.location.href = 'load-login.html'; // Replace with your login page URL
-}
-
-// Event listeners for user activity
-window.addEventListener('mousemove', resetTimer);
-window.addEventListener('keydown', resetTimer);
-window.addEventListener('scroll', resetTimer);
-window.addEventListener('click', resetTimer);
-
-// Start the timer initially
-resetTimer();
 </script>
 <script src="../assets/js/profile.js"></script>
 <script src="../assets/js/dashboard.js"></script>
