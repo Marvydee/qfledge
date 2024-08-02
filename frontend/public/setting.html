@@ -21,6 +21,14 @@
 <link rel="stylesheet" href="../assets/css/reset.css">
 <link rel="stylesheet" href="../assets/style.css">
 <script src="//code.jivosite.com/widget/9PzxmWRDng" async></script>
+<style>
+.profile-picture {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+  }
+</style>
 </head>
 <body>
 <div class="body-bg" style="background-color: #181A20;">
@@ -42,7 +50,7 @@
 <div class="menu-bar">
 <ul class="menu-bar__one">
 <li class="active"><a href="user-dashboard.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v1" style="background-color: #f0b90b;"><svg class="nftmax-svg-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M0.800781 2.60005V7.40005H7.40078V0.800049H2.60078C2.12339 0.800049 1.66555 0.989691 1.32799 1.32726C0.990424 1.66482 0.800781 2.12266 0.800781 2.60005H0.800781Z"></path><path d="M13.4016 0.800049H8.60156V7.40005H15.2016V2.60005C15.2016 2.12266 15.0119 1.66482 14.6744 1.32726C14.3368 0.989691 13.879 0.800049 13.4016 0.800049V0.800049Z"></path><path d="M0.800781 13.4001C0.800781 13.8775 0.990424 14.3353 1.32799 14.6729C1.66555 15.0105 2.12339 15.2001 2.60078 15.2001H7.40078V8.6001H0.800781V13.4001Z"></path><path d="M8.60156 15.2001H13.4016C13.879 15.2001 14.3368 15.0105 14.6744 14.6729C15.0119 14.3353 15.2016 13.8775 15.2016 13.4001V8.6001H8.60156V15.2001Z"></path></svg></span><span class="menu-bar__name">Dashboard</span></span></a></li>
-<li><a href="kyc.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v3" ><svg class="nftmax-svg-icon" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg"><path d="M10.2704 9.42604C9.70288 9.42584 9.14549 9.27516 8.65433 8.98917C8.16317 9.27516 7.60578 9.42584 7.03831 9.42604H5.96096C5.39271 9.42532 4.83491 9.27227 4.34494 8.98267C3.85499 9.27232 3.29717 9.42537 2.72891 9.42604H2.19024C1.62228 9.42585 1.06457 9.27377 0.574219 8.98538V11.5942C0.574219 12.0254 0.744478 12.439 1.04754 12.744C1.3506 13.0489 1.76165 13.2202 2.19024 13.2202H10.809C11.2376 13.2202 11.6487 13.0489 11.9517 12.744C12.2548 12.439 12.425 12.0254 12.425 11.5942V8.98592C11.9346 9.27391 11.3769 9.42578 10.809 9.42604H10.2704Z"></path><path d="M9.20833 0V3.24641H8.125V0H4.875V3.24641H3.79167V0H1.19167L0.013 5.29327L0 5.95175C0 6.52575 0.228273 7.07624 0.634602 7.48212C1.04093 7.888 1.59203 8.11602 2.16667 8.11602H2.70833C3.01703 8.11503 3.32189 8.04774 3.60227 7.91872C3.88264 7.78971 4.13197 7.60198 4.33333 7.36827C4.5347 7.60198 4.78402 7.78971 5.0644 7.91872C5.34477 8.04774 5.64964 8.11503 5.95833 8.11602H7.04167C7.34923 8.11618 7.65329 8.05077 7.93352 7.92415C8.21375 7.79753 8.4637 7.61263 8.66667 7.38179C8.86963 7.61263 9.11958 7.79753 9.39981 7.92415C9.68004 8.05077 9.9841 8.11618 10.2917 8.11602H10.8333C11.408 8.11602 11.9591 7.888 12.3654 7.48212C12.7717 7.07624 13 6.52575 13 5.95175V5.41068L11.8083 0H9.20833Z"></path></svg></span><span class="menu-bar__name">KYC</span><span class="menu-bar__count ntfmax__bgc--2"></span></span></a></li>
+<li><a href="kyc.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v3" ><svg class="nftmax-svg-icon" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg"><path d="M10.2704 9.42604C9.70288 9.42584 9.14549 9.27516 8.65433 8.98917C8.16317 9.27516 7.60578 9.42584 7.03831 9.42604H5.96096C5.39271 9.42532 4.83491 9.27227 4.34494 8.98267C3.85499 9.27232 3.29717 9.42537 2.72891 9.42604H2.19024C1.62228 9.42585 1.06457 9.27377 0.574219 8.98538V11.5942C0.574219 12.0254 0.744478 12.439 1.04754 12.744C1.3506 13.0489 1.76165 13.2202 2.19024 13.2202H10.809C11.2376 13.2202 11.6487 13.0489 11.9517 12.744C12.2548 12.439 12.425 12.0254 12.425 11.5942V8.98592C11.9346 9.27391 11.3769 9.42578 10.809 9.42604H10.2704Z"></path><path d="M9.20833 0V3.24641H8.125V0H4.875V3.24641H3.79167V0H1.19167L0.013 5.29327L0 5.95175C0 6.52575 0.228273 7.07624 0.634602 7.48212C1.04093 7.888 1.59203 8.11602 2.16667 8.11602H2.70833C3.01703 8.11503 3.32189 8.04774 3.60227 7.91872C3.88264 7.78971 4.13197 7.60198 4.33333 7.36827C4.5347 7.60198 4.78402 7.78971 5.0644 7.91872C5.34477 8.04774 5.64964 8.11503 5.95833 8.11602H7.04167C7.34923 8.11618 7.65329 8.05077 7.93352 7.92415C8.21375 7.79753 8.4637 7.61263 8.66667 7.38179C8.86963 7.61263 9.11958 7.79753 9.39981 7.92415C9.68004 8.05077 9.9841 8.11618 10.2917 8.11602H10.8333C11.408 8.11602 11.9591 7.888 12.3654 7.48212C12.7717 7.07624 13 6.52575 13 5.95175V5.41068L11.8083 0H9.20833Z"></path></svg></span><span class="menu-bar__name">KYC</span><span class="menu-bar__count ntfmax__bgc--2">9</span></span></a></li>
 <li><a href="my-collection.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v5"><svg class="nftmax-svg-icon" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.1755 7.88376L11.9493 9.56253L12.7948 12.266C12.9314 12.6853 12.9331 13.1389 12.7997 13.5593C12.6663 13.9797 12.4049 14.3444 12.0544 14.5988C11.7099 14.8615 11.2925 15.0022 10.8643 15C10.436 14.9978 10.02 14.8528 9.67807 14.5866L7.50125 12.9323L5.3238 14.5846C4.97996 14.8458 4.56476 14.9876 4.13792 14.9898C3.71108 14.9919 3.29457 14.8542 2.94827 14.5966C2.60197 14.3389 2.34373 13.9745 2.21066 13.5557C2.0776 13.1369 2.07657 12.6854 2.20772 12.266L3.05318 9.56253L0.826957 7.88376C0.483556 7.62452 0.22828 7.25987 0.0975914 6.84188C-0.0330973 6.4239 -0.0325136 5.97396 0.0992584 5.55633C0.23103 5.13871 0.487251 4.77476 0.831323 4.51648C1.17539 4.25819 1.58972 4.11878 2.01511 4.11815H4.74974L5.57957 1.44762C5.71006 1.02726 5.96649 0.660548 6.31187 0.400372C6.65724 0.140196 7.07372 0 7.50125 0C7.92878 0 8.34526 0.140196 8.69064 0.400372C9.03601 0.660548 9.29244 1.02726 9.42293 1.44762L10.2528 4.11815H12.9849C13.4103 4.11878 13.8246 4.25819 14.1687 4.51648C14.5127 4.77476 14.769 5.13871 14.9007 5.55633C15.0325 5.97396 15.0331 6.4239 14.9024 6.84188C14.7717 7.25987 14.5164 7.62452 14.173 7.88376H14.1755Z"></path></svg></span><span class="menu-bar__name">My NFT Collections</span></span></a></li>
 <li><a href="message.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v8"><svg class="nftmax-svg-icon" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg"><path d="M13.9729 3L9.06236 7.82172C7.92242 8.93841 6.07703 8.93841 4.93709 7.82172L0.0267964 3C0.0185934 3.09048 0 3.17238 0 3.26232V10.1359C0.00191403 11.7168 1.30673 12.9981 2.9167 13H11.0833C12.6933 12.9981 13.9981 11.7168 14 10.1359V3.26232C13.9997 3.17238 13.9811 3.09048 13.9729 3Z"></path><path d="M8.31954 6.50593L14 1.35845C13.4403 0.517707 12.4369 0.00264136 11.353 0H2.64666C1.5631 0.00264136 0.559417 0.517707 0 1.35845L5.68046 6.50593C6.40983 7.16469 7.58988 7.16469 8.31954 6.50593Z"></path></svg></span><span class="menu-bar__name">Message</span><span class="menu-bar__count  ntfmax"></span></span></a></li>
 <li><a href="history.html"><span class="menu-bar__text"><span class="nftmax-menu-icon nftmax-svg-icon__v9"><svg class="nftmax-svg-icon" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="M9.37855 15.6715C10.5752 15.6715 11.745 15.3166 12.74 14.6518C13.7349 13.987 14.5104 13.042 14.9684 11.9365C15.4263 10.8309 15.5461 9.61436 15.3127 8.4407C15.0792 7.26704 14.503 6.18896 13.6568 5.3428C12.8107 4.49664 11.7326 3.92039 10.5589 3.68694C9.38526 3.45348 8.16873 3.5733 7.06316 4.03124C5.9576 4.48918 5.01266 5.26467 4.34783 6.25966C3.683 7.25464 3.32816 8.42442 3.32816 9.62107C3.33057 11.225 3.9688 12.7625 5.10295 13.8967C6.23709 15.0308 7.77463 15.669 9.37855 15.6715ZM8.70628 7.60428C8.70628 7.42598 8.77711 7.25499 8.90318 7.12891C9.02926 7.00284 9.20025 6.93201 9.37855 6.93201C9.55684 6.93201 9.72784 7.00284 9.85391 7.12891C9.97999 7.25499 10.0508 7.42598 10.0508 7.60428V9.33872L11.2811 10.569C11.4068 10.6957 11.4772 10.8672 11.4768 11.0457C11.4765 11.2243 11.4054 11.3954 11.2791 11.5216C11.1529 11.6479 10.9817 11.719 10.8032 11.7193C10.6246 11.7197 10.4532 11.6493 10.3264 11.5236L8.90124 10.0984C8.7779 9.96987 8.70818 9.79918 8.70628 9.62107V7.60428Z"></path><path d="M9.37854 0.209365C9.20024 0.209365 9.02925 0.280193 8.90317 0.406267C8.7771 0.532342 8.70627 0.703335 8.70627 0.881631C8.70627 1.05993 8.7771 1.23092 8.90317 1.35699C9.02925 1.48307 9.20024 1.5539 9.37854 1.5539C11.2605 1.54612 13.0865 2.19384 14.5428 3.38583C15.9992 4.57782 16.9951 6.23969 17.3595 8.08605C17.7239 9.93241 17.4341 11.848 16.5398 13.504C15.6455 15.1599 14.2026 16.4528 12.4588 17.1606C10.715 17.8685 8.77918 17.9471 6.98374 17.3829C5.1883 16.8188 3.64531 15.6471 2.61973 14.0691C1.59415 12.4911 1.15 10.6053 1.36354 8.73548C1.57707 6.86565 2.43498 5.12852 3.78993 3.82239L3.74435 4.17009C3.72117 4.3469 3.76918 4.52568 3.87782 4.6671C3.98646 4.80852 4.14682 4.90099 4.32364 4.92417C4.50045 4.94734 4.67924 4.89933 4.82065 4.7907C4.96207 4.68206 5.05454 4.52169 5.07772 4.34487L5.33936 2.34515C5.35537 2.16962 5.30457 1.99451 5.19711 1.8548C5.08964 1.71508 4.93343 1.62105 4.75967 1.59148L2.75995 1.33003C2.6712 1.31592 2.58053 1.31974 2.49328 1.34127C2.40604 1.3628 2.324 1.40161 2.25201 1.45539C2.18002 1.50917 2.11954 1.57684 2.07415 1.6544C2.02876 1.73195 1.99938 1.81782 1.98775 1.90693C1.97612 1.99603 1.98247 2.08657 2.00643 2.17318C2.03038 2.25979 2.07146 2.34071 2.12723 2.41118C2.183 2.48164 2.25233 2.5402 2.33112 2.58341C2.40991 2.62662 2.49657 2.65359 2.58597 2.66273L3.00459 2.71759C1.3997 4.20681 0.365311 6.20977 0.0800858 8.38051C-0.20514 10.5512 0.27671 12.7534 1.44241 14.6067C2.6081 16.46 4.38444 17.8479 6.4646 18.5308C8.54476 19.2138 10.7981 19.1487 12.8354 18.347C14.8728 17.5453 16.5661 16.0573 17.623 14.1399C18.6799 12.2225 19.034 9.99617 18.6241 7.84549C18.2142 5.69482 17.0661 3.75482 15.378 2.3606C13.6899 0.966386 11.5679 0.205498 9.37854 0.209365Z"></path></svg></span><span class="menu-bar__name">History</span></span></a></li>
@@ -113,7 +121,6 @@
 </div>
 </div>
 </header>
-<img src="" class="profile-picture" alt="">
  
 <section class="nftmax-adashboard nftmax-show">
 <div class="container">
@@ -159,11 +166,11 @@
 </div>
 <div class="nftmax__item-form--group">
 <label class="nftmax__item-label" for="username">User Name</label>
-<input class="nftmax__item-input" type="text" id="display-username" name="username">
+<input class="nftmax__item-input" type="text" id="username" name="username">
 </div>
 <div class="nftmax__item-form--group">
 <label class="nftmax__item-label" for="email">Email </label>
-<input class="nftmax__item-input" type="email" id="display-email" name="email"  >
+<input class="nftmax__item-input" type="email" id="email" name="email"  >
 </div>
 </div>
 <div class="nftmax-ptabs__form-update">
@@ -175,7 +182,7 @@
 </div>
 <div class="nftmax-ptabs__sauthor">
 <div class="nftmax-ptabs__sauthor-img nftmax-ptabs__pthumb">
-<img src="https://res.cloudinary.com/drqsdmv51/image/upload/v1722560562/profile_pictures/66a18a1f3d7a9d8c90cfb724-1722560560376.jpg" alt="#" class="profile-picture">
+<img src="../assets/img/profile-thumb.png" alt="#" class="profile-picture">
 <label for="profilePicture"><span class="nftmax-ptabs__sedit"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5147 11.5C17.7284 12.7137 18.9234 13.9087 20.1296 15.115C19.9798 15.2611 19.8187 15.4109 19.6651 15.5683C17.4699 17.7635 15.271 19.9587 13.0758 22.1539C12.9334 22.2962 12.7948 22.4386 12.6524 22.5735C12.6187 22.6034 12.5663 22.6296 12.5213 22.6296C11.3788 22.6334 10.2362 22.6297 9.09365 22.6334C9.01498 22.6334 9 22.6034 9 22.536C9 21.4009 9 20.2621 9.00375 19.1271C9.00375 19.0746 9.02997 19.0109 9.06368 18.9772C10.4123 17.6249 11.7609 16.2763 13.1095 14.9277C14.2295 13.8076 15.3459 12.6913 16.466 11.5712C16.4884 11.5487 16.4997 11.5187 16.5147 11.5Z" fill="white"></path><path d="M20.9499 14.2904C19.7436 13.0842 18.5449 11.8854 17.3499 10.6904C17.5634 10.4694 17.7844 10.2446 18.0054 10.0199C18.2639 9.76139 18.5261 9.50291 18.7884 9.24443C19.118 8.91852 19.5713 8.91852 19.8972 9.24443C20.7251 10.0611 21.5492 10.8815 22.3771 11.6981C22.6993 12.0165 22.7105 12.4698 22.3996 12.792C21.9238 13.2865 21.4443 13.7772 20.9686 14.2717C20.9648 14.2792 20.9536 14.2867 20.9499 14.2904Z" fill="white"></path></svg></span></label>
 <input type="file" id="profilePicture" name="profilePicture" />
 </div>
@@ -220,110 +227,88 @@
 </div>
 <script>
 	document.addEventListener("DOMContentLoaded", async () => {
-	  const token = localStorage.getItem("token");
-	  if (!token) {
-		window.location.href = "login.html";
-		return;
-	  }
-	
-	  try {
-		const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
-		  headers: {
-			Authorization: `Bearer ${token}`,
-		  },
-		});
-	
-		if (!response.ok) {
-		  throw new Error("Failed to fetch profile information");
-		}
-	
-		const profileData = await response.json();
-		console.log("Profile Data:", profileData);
-	
-		// Update the DOM with the profile information
-		// document.getElementById("display-username").textContent =
-		//   profileData.username;
-		// document.getElementById("display-email").textContent = profileData.email;
-	
-		const displayProfilePictureElements =
-		  document.querySelectorAll(".profile-picture").forEach(element => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/user/profile", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch profile information");
+    }
+
+    const profileData = await response.json();
+    console.log("Profile Data:", profileData);
+
+    // Update the DOM with the profile information
+    // document.getElementById("display-username").textContent = profileData.username;
+    // document.getElementById("display-email").textContent = profileData.email;
+
+    const profilePictureUrl = profileData.profilePicture || "public/default.jpg";
+
+    // Update profile picture for all elements with the class `profile-picture`
+    document.querySelectorAll(".profile-picture").forEach(element => {
   console.log("Updating element src:", profilePictureUrl);
   element.src = profilePictureUrl;
 });
-	
-		// Prefill the form with current user details
-		// document.getElementById("username").value = profileData.username;
-		// document.getElementById("email").value = profileData.email;
-	  } catch (error) {
-		console.error("Error fetching profile data:", error);
-	  }
-	
-	  // Handle form submission for profile update
-	  const form = document.getElementById("edit-profile-form");
-	  form.addEventListener("submit", async (event) => {
-		event.preventDefault();
-	
-		const formData = new FormData(form);
-	
-		try {
-		  const response = await fetch("https://qfledge-1.onrender.com/user/profile", {
-			method: "PUT",
-			headers: {
-			  Authorization: `Bearer ${token}`,
-			},
-			body: formData,
-		  });
-	
-		  if (!response.ok) {
-			throw new Error("Failed to update profile information");
-		  }
-	
-		  // Display success message
-		  const successMessage = document.createElement("p");
-		  successMessage.textContent = "Profile updated successfully";
-		  successMessage.style.backgroundColor = "white"; 
-		  successMessage.style.color = "green";
-		  successMessage.style.fontWeight = "bold";
-		  successMessage.style.marginTop = "10px";
-		  document.getElementById("edit-profile-form").appendChild(successMessage);
-	
-		  // Refresh the page to show updated profile information
-		  setTimeout(() => {
-			window.location.reload();
-		  }, 2000); // Reload after 2 seconds
-	
-		} catch (error) {
-		  console.error("Error updating profile data:", error);
-		}
-	  });
-	});
+
+
+    // Prefill the form with current user details
+    // document.getElementById("username").value = profileData.username;
+    // document.getElementById("email").value = profileData.email;
+  } catch (error) {
+    console.error("Error fetching profile data:", error);
+  }
+
+  // Handle form submission for profile update
+  const form = document.getElementById("edit-profile-form");
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("http://localhost:3000/user/profile", {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update profile information");
+      }
+
+      // Display success message
+      const successMessage = document.createElement("p");
+      successMessage.textContent = "Profile updated successfully";
+      successMessage.style.backgroundColor = "white"; 
+      successMessage.style.color = "green";
+      successMessage.style.fontWeight = "bold";
+      successMessage.style.marginTop = "10px";
+      document.getElementById("edit-profile-form").appendChild(successMessage);
+
+      // Refresh the page to show updated profile information
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000); // Reload after 2 seconds
+
+    } catch (error) {
+      console.error("Error updating profile data:", error);
+    }
+  });
+});
 	</script>
-
-	<script>
-let sessionTimeout;
-const TIMEOUT_DURATION = 10 * 60 * 1000; // 10 minutes
-
-// Reset the timer on user activity
-function resetTimer() {
-    clearTimeout(sessionTimeout);
-    sessionTimeout = setTimeout(logout, TIMEOUT_DURATION);
-}
-
-// Log the user out by redirecting to the login page
-function logout() {
-    alert("Session expired due to inactivity. Redirecting to login page.");
-    window.location.href = 'load-login.html'; // Replace with your login page URL
-}
-
-// Event listeners for user activity
-window.addEventListener('mousemove', resetTimer);
-window.addEventListener('keydown', resetTimer);
-window.addEventListener('scroll', resetTimer);
-window.addEventListener('click', resetTimer);
-
-// Start the timer initially
-resetTimer();
-</script>
+	
+<script src="../assets/js/profile.js"></script>
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/jquery-migrate.js"></script>
 <script src="../assets/js/popper.min.js"></script>
