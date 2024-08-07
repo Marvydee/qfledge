@@ -103,10 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     headerRow.style.backgroundColor = "#181A20"; // Header row background color
     headerRow.innerHTML = `
       <th>Coin</th>
-      <th>Live Price</th>
       <th>Amount</th>
-      <th>Total Value</th>
-      <th>24h Change</th>
     `;
     thead.appendChild(headerRow);
     table.appendChild(thead);
@@ -128,15 +125,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         row.style.marginBottom = "2px"; // Add margin bottom for each row
 
         row.innerHTML = `
-          <td><img src="${
-            coinImages[coinId] || "path/to/default.png"
-          }" alt="${symbol}" style="width: 30px;"> ${symbol}</td>
-          <td>$${livePrice.toFixed(2)}</td>
-          <td>${userAmount}</td>
-          <td>$${totalValue.toFixed(2)}</td>
-          <td style="color: ${
-            changePercentage >= 0 ? "green" : "red"
-          }">${changePercentage.toFixed(2)}%</td>
+          <td data-label="Coin">
+            <img src="${
+              coinImages[coinId] || "path/to/default.png"
+            }" alt="${symbol}" style="width: 30px;">
+            ${symbol}
+            <div> $${livePrice.toFixed(2)}</div>
+            <div style="color: ${
+              changePercentage >= 0 ? "green" : "red"
+            }"> ${changePercentage.toFixed(2)}%</div>
+          </td>
+          <td data-label="Amount">
+            <div> ${userAmount}</div>
+            <div> $${totalValue.toFixed(2)}</div>
+          </td>
         `;
 
         tbody.appendChild(row);
