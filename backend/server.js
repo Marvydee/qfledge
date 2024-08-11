@@ -360,6 +360,39 @@ app.post("/admin/login", async (req, res) => {
   }
 });
 
+let walletAddresses = {
+  BTC: "bc1q0nukex89tx2f956lw96cqlv3ey3xxq2gmdleea",
+  ETH: "0x146E1c18A64822Ca37f1a166AdEa187DC4aCF2DC",
+  USDT: "TKVLdS8Aaizd6QUQVJTTCdSS6uZ1Hdwzey",
+  DOGE: "",
+  BNB: "",
+  SOL: "",
+  TRON: "",
+  XRP: "",
+};
+
+app.post("/api/update-address", (req, res) => {
+  const { coin, address } = req.body;
+
+  if (coin && address) {
+    walletAddresses[coin] = address;
+    res.status(200).send({ message: "Address updated successfully" });
+  } else {
+    res.status(400).send({ message: "Invalid coin or address" });
+  }
+});
+
+app.get("/api/get-address/:coin", (req, res) => {
+  const coin = req.params.coin;
+  const address = walletAddresses[coin];
+
+  if (address) {
+    res.status(200).send({ address });
+  } else {
+    res.status(404).send({ message: "Coin not found" });
+  }
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
