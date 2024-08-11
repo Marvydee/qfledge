@@ -27,18 +27,7 @@
 		height: 10;
 	}
 </style>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '6d7e3d3c9f4068894d79ba6f2d6d4eaf1f6b5eea';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+<script src="//code.jivosite.com/widget/9PzxmWRDng" async></script>
 </head>
 <body>
 <div class="body-bg" style="background-color: #181A20;">
@@ -152,20 +141,20 @@ window.smartsupp||(function(d) {
 	<div>
 		<a href="usdt.html"><img class="coin-image" src="https://assets.coingecko.com/coins/images/325/large/Tether.png?1668148663" alt=""></a>
 	</div>
-	<div>
+	<!-- <div>
 		<img src="https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256" alt="">
-	</div>
-	<div>
+	</div> -->
+	<!-- <div>
 		<img src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850" alt="">
+	</div> -->
+	<div>
+		<a href="./sol.html"><img src="https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422" alt=""></a>
 	</div>
 	<div>
-		<img src="https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422" alt="">
+		<a href="./tron.html"><img src="https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066" alt=""></a>
 	</div>
 	<div>
-		<img src="https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066" alt="">
-	</div>
-	<div>
-		<img src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731" alt="">
+		<a href="./xrp.html"><img src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731" alt=""></a>
 	</div>
 </div>
 	</div>
@@ -187,29 +176,8 @@ window.smartsupp||(function(d) {
 
 </div>
 <script>
-let sessionTimeout;
-const TIMEOUT_DURATION = 10 * 60 * 1000; // 10 minutes
 
-// Reset the timer on user activity
-function resetTimer() {
-    clearTimeout(sessionTimeout);
-    sessionTimeout = setTimeout(logout, TIMEOUT_DURATION);
-}
 
-// Log the user out by redirecting to the login page
-function logout() {
-    alert("Session expired due to inactivity. Redirecting to login page.");
-    window.location.href = 'load-login.html'; // Replace with your login page URL
-}
-
-// Event listeners for user activity
-window.addEventListener('mousemove', resetTimer);
-window.addEventListener('keydown', resetTimer);
-window.addEventListener('scroll', resetTimer);
-window.addEventListener('click', resetTimer);
-
-// Start the timer initially
-resetTimer();
 </script>
 
 <script src="../assets/js/jquery.min.js"></script>
