@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Check if user is admin and redirect accordingly
       const isAdmin = true; // Replace with actual check (e.g., from JWT payload)
       if (isAdmin) {
-        window.location.href = "edit-user.html";
+        window.location.href = "admin-page.html";
       } else {
         window.location.href = "dashboard.html";
       }
