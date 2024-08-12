@@ -150,13 +150,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     table.appendChild(tbody);
     coinPricesContainer.appendChild(table);
 
-    // Display the total balance
-    const balanceElement = document.querySelector(".nftmax-amount__digit span");
-    if (balanceElement) {
-      balanceElement.textContent = `$ ${totalBalance.toFixed(2)}`; // Format the balance with '$'
-    } else {
-      console.error("Balance element not found");
-    }
+  const balanceElement = document.querySelector(".nftmax-amount__digit span");
+if (balanceElement) {
+  // Format the total balance with commas and '$' symbol
+  const formattedBalance = totalBalance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  balanceElement.textContent = `$ ${formattedBalance}`;
+} else {
+  console.error("Balance element not found");
+}
   } catch (error) {
     console.error("Error fetching data:", error);
   }
